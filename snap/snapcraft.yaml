@@ -5,7 +5,7 @@ summary: test wayland connection via weston clients
 description: none
 
 grade: stable
-confinement: devmode # use 'strict' once you have the right plugs and slots
+confinement: strict
 
 parts:
   weston:
@@ -18,3 +18,9 @@ apps:
     command: usr/bin/weston-terminal
     plugs:
     - wayland
+    extensions: [gnome]
+  weston-flower-test:
+    command: usr/bin/weston-flower
+    plugs:
+    - wayland
+    extensions: [gnome]
